@@ -121,7 +121,7 @@ hamburgerCross.addEventListener("click" , crossClick);
 
   //the whole styling and assembling for news thing to appear
   function addNews(obtain){
-    console.log(obtain.World.length);
+    console.log("Article Count: " + obtain.World.length);
     for (let i = 0; i < 20; i++) {
       let newsFeed = document.querySelector(".newsfeed-container");
       let article = document.createElement("article");
@@ -138,6 +138,7 @@ hamburgerCross.addEventListener("click" , crossClick);
   }
 
 async function getNews() {
+
     let endpointURL = 'https://ok.surf/api/v1/cors/news-feed';
     
             // Fetch data from the remote HTTP endpoint
@@ -145,6 +146,8 @@ async function getNews() {
     
             // Extract the response data as a JSON object
           let projectInfo = await response.json();
+    
+          
           addNews(projectInfo);
     }
     
@@ -155,19 +158,20 @@ async function getNews() {
 
     // Weather API
 
-    //the whole styling and assembling for weather thing to appear
-  function addWeather(obtainWeather){
-    console.log(obtainWeather.latitude);
+    //the whole styling and assembling for weather thing to appear (and date to get array)
+    function addWeather(obtainWeather){
+      const d = new Date();
+      getHour = d.getHours();
+      j = getHour;
       let weatherFeed = document.querySelector(".weather-container");
       let article = document.createElement("article");
-      let heading2 = document.createElement("h2");
-      let linkArticle = document.createElement("a");
-      heading2.innerHTML = obtainWeather.latitude;
-      linkArticle.innerHTML = obtainWeather.longitude;
+      let tempInfo = document.createElement("p");
+      let humidInfo = document.createElement("p");
+      tempInfo.innerHTML = "Temperature: " + obtainWeather.hourly.temperature_2m[j] + obtainWeather.hourly_units.temperature_2m;
+      humidInfo.innerHTML = "Humidity: " + obtainWeather.hourly.relative_humidity_2m	[j] + obtainWeather.hourly_units.relative_humidity_2m;
       article.classList.add("weather");
-      article.append(heading2, linkArticle);
+      article.append(tempInfo, humidInfo);
       weatherFeed.appendChild(article);
-      
   }
 
 async function getWeather() {
