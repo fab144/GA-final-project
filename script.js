@@ -121,14 +121,14 @@ hamburgerCross.addEventListener("click" , crossClick);
 
   //the whole styling and assembling for news thing to appear
   function addNews(obtain){
-    console.log(obtain.articles.length);
+    console.log(obtain.World.length);
     for (let i = 0; i < 20; i++) {
       let newsFeed = document.querySelector(".newsfeed-container");
       let article = document.createElement("article");
       let heading2 = document.createElement("h2");
       let linkArticle = document.createElement("a");
-      heading2.innerHTML = obtain.articles[i].title;
-      linkArticle.href = obtain.articles[i].url;
+      heading2.innerHTML = obtain.World[i].title + " - " +obtain.World[i].source;
+      linkArticle.href = obtain.World[i].link;
       linkArticle.innerHTML = "Read more >>";
       article.classList.add("news");
       article.append(heading2, linkArticle);
@@ -138,17 +138,14 @@ hamburgerCross.addEventListener("click" , crossClick);
   }
 
 async function getNews() {
-    let endpointURL = 'https://newsapi.org/v2/top-headlines?country=my&apiKey=91b89b68f9a04e76a23507d0e5bd0ae9';
+    let endpointURL = 'https://ok.surf/api/v1/cors/news-feed';
     
             // Fetch data from the remote HTTP endpoint
           let response = await fetch(endpointURL);
     
             // Extract the response data as a JSON object
           let projectInfo = await response.json();
-    
-          
           addNews(projectInfo);
-          // document.body.innerHTML = 'Headline: ' + projectInfo.articles[0].title;
     }
     
     // Call our async function. It returns a Promise, but we don't use its return value.
