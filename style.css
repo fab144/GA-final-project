@@ -250,6 +250,18 @@ h1{
 }
  /* other info styles */
 
+ .button-form{
+  position:relative;
+  margin-top:5px;
+  left:30%;
+  right:70%;
+ }
+
+ .radio{
+  margin: 0 auto;
+  width: 40%;
+ }
+
 .news{
   width:100%;
   height:100px;
@@ -280,7 +292,12 @@ h1{
  overflow:scroll
  }
 
-.weather,.survey{
+ .weather-container, .survey p{
+  text-align: center;
+  padding: 20px 0;
+ }
+
+.weatherfeed,.survey{
  height:50%;
  background-color: white;
  border:1px solid black;
@@ -329,12 +346,16 @@ h1{
   height:50%;
   width:95%;
   background-color: white;
-  border:1px solid black;
   margin:5px;
  }
 
- .weather, .survey{
+ .weatherfeed{
+  height:100%;
   margin-right: 0;
+}
+
+.survey{
+  display:none;
 }
  }
 
