@@ -32,9 +32,9 @@ h1{
   margin:0;
 }
 
-.our-networks, .schedule, .watch, .rate-cards{
+.hovering-item{
   background-color:darkseagreen;
-  width:250px;
+  width:150px;
   box-shadow: 2px 1px 5px  grey;
   padding:0;
   z-index: 1;
@@ -53,38 +53,13 @@ h1{
 
 #nav-hover-1, #nav-hover-2, #nav-hover-3, #nav-hover-4{
   position: absolute;
-  margin-left:200px;
 }
 
-.our-networks a, .schedule a, .watch a, .rate-cards a{
+.hovering-item a{
   margin-left: 3px;
   color: black;
   text-decoration: none;
   border-bottom: 1px solid black;
-}
-
-.our-networks {
-  position:relative;
-  right:75%;
-  bottom:77.5%;
-}
-
-.schedule {
-  position:relative;
-  right:65%;
-  bottom:81%;
-}
-
-.watch {
-  position:relative;
-  right:57%;
-  bottom:81%;
-}
-
-.rate-cards {
-  position:relative;
-  right:50%;
-  bottom:81%;
 }
 
 .profile-tab a{
@@ -120,6 +95,28 @@ h1{
  }
 
 }
+
+ /* hovering nav-tab resizing position */
+  .our-networks {
+    position:relative;
+    bottom:76.5%;
+  }
+
+  .schedule {
+    position:relative;
+    bottom:79.5%;
+  }
+
+  .watch {
+    position:relative;
+    bottom:79.5%;
+  }
+
+  .rate-cards {
+    position:relative;
+    bottom:79.5%;
+  }
+
 
 /* navbar style (mobile) */
 
@@ -205,7 +202,12 @@ h1{
  }
 
 
- /* live broadcast carousel styles */
+ /* carousel styles (bootstrap) */
+
+#carousel-show, #carousel-catchup{
+  box-shadow: 2px 1px 5px  grey;
+}
+
 @media (min-width:768px){
 .carousel-inner img{
             width:128px;
@@ -359,7 +361,7 @@ h1{
 }
  }
 
-  /* catch-up carousel styles */
+  /* catch-up carousel styles (additional) */
 
 
   @media (max-width:768px){
