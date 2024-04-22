@@ -4,8 +4,7 @@
 h1{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0 10px 10px;
   font-weight: bold;
 }
 
@@ -205,16 +204,18 @@ h1{
  /* carousel styles (bootstrap) */
 
 #carousel-show, #carousel-catchup{
+  background-color: grey;
   box-shadow: 2px 1px 5px  grey;
+  width:90%;
+  margin:0 auto;
+  border-radius: 10px;
 }
 
 @media (min-width:768px){
 .carousel-inner img{
             width:128px;
         }
-        .carousel-inner{
-            background-color: grey;
-        }
+        
         .carousel-item.active,
         .carousel-item-next,
         .carousel-item-prev {
@@ -285,6 +286,7 @@ h1{
  font-family: Verdana, Geneva, Tahoma, sans-serif;
  font-size: 10px;
  color:rgb(72, 71, 71);
+ width:fit-content;
 }
 
 
@@ -328,19 +330,26 @@ h1{
  }
 
 .other-info {
- width:100%;
+ width:90%;
  height:450px;
+ border-radius: 10px;
  display:flex;
  align-items: center;
  background-color: green;
  margin-top: 5px;
+ margin-left: auto;
+ margin-right: auto;
  }
+
+
+ /* other info styles (mobile) */
 
  @media (max-width:768px) {
 .other-info{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  border-radius: 10px;
+  width: 90%;
   height:600px;
 }
 
@@ -370,6 +379,12 @@ h1{
     }
   }
 
+ /* about section styles */
+
+ .about p{
+  margin-left:10px;
+ }
+
  /* footer styles */
 
 
@@ -384,6 +399,8 @@ h1{
    font-size:10px;
    color:white;
  }
+
+
 
  footer{
    width:100%;
